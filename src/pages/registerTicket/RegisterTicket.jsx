@@ -30,7 +30,8 @@ const RegisterTicket = () => {
 
 
   const handleSubmit = (e) => {
-    console.log('Fuck Off')
+     e.preventDefault();
+    console.log('Fuck you very much')
   };
 
   return (
@@ -38,7 +39,6 @@ const RegisterTicket = () => {
       <h1>Register a new ticket</h1>
       <div className='main-reg'>
         <div className='reg-left'>
-        
           <div className='div-space'>
         <div className="label-mrg">
           <label className="label-mrg" htmlFor="username">Username</label>
