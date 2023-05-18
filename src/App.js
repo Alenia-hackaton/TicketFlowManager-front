@@ -1,14 +1,19 @@
 import './App.css';
-import RegisterTicket from './pages/registerTicket/RegisterTicket';
 import Dashboard from "./pages/Dashboard/Dashboard.jsx"
 import TicketPage from './pages/TicketPage/TicketPage';
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import RegisterTicket from './pages/registerTicket/registerTicket';
 
 function App() {
   return (
     <div className="App">
-      <RegisterTicket />
-      <Dashboard />
-      <TicketPage />
+      <Navbar/>
+      <Routes>
+        <Route path ="/" element={<RegisterTicket />} />
+        <Route path="/tickets" element={<Dashboard/>} />
+        <Route path="/tickets/:id" element={<TicketPage/>} />
+      </Routes>
     </div>
   );
 }
