@@ -1,5 +1,9 @@
 
-export default function TicketCard ({ticket}) {
+export default function TicketCard ({ticket, ticketId, updateStatus}) {
+  const handleChange = (event) => {
+    const newStatus = event.target.value;
+    updateStatus(ticketId, newStatus);
+  };
       return (
         <div className="card-container">
         {ticket ? (
@@ -9,9 +13,9 @@ export default function TicketCard ({ticket}) {
                 <p className="card-text">Subject: {ticket.ticket_subject}</p>     
                 {/* Must change this for link once routes are established */}
                 <form className="center">
-                  <label htmlFor="change-">
+                  <label htmlFor="change-status">
                     Change status{" "}
-                      <select id="cupcake-select">
+                      <select id="status-select" onChange={handleChange}>
                         <option value="">---</option>
                         <option value="To Do">To Do</option>
                         <option value="In Progress">In Progress</option>
