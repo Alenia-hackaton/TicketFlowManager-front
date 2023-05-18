@@ -34,7 +34,7 @@ const RegisterTicket = () => {
     console.log('Fuck you very much')
   };
 
-    return (
+  return (
     <div className='regTicket'>
       <h1>Register a new ticket</h1>
       <div className='main-reg'>
@@ -148,7 +148,7 @@ const RegisterTicket = () => {
         </div>
         </div>
     </div>
-    )
+  )
 }
 
 export default RegisterTicket
