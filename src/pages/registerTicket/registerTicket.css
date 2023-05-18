@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 
+.h1-title {
+    text-align: start;
+    color: #030E6A;
+}
 .regTicket {
     font-family: Nunito;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin: 70px;
+    background-color: #030d6a2b;
+    padding: 70px;
+    border-radius: 40px;
+    color: #030E6A;
+    font-weight: 700;
+
 }
 
 .div-space {
@@ -14,7 +22,8 @@
 
 .main-reg {
     display: flex;
-    margin-top: 70px;
+    margin-top: 20px;
+
 }
 
 .reg-left {
@@ -30,10 +39,23 @@
     justify-content: space-between;
 }
 
+#input-t, .txtarea-desc {
+    border-radius: 10px;
+    border-style: groove;
+    border-color: #a8aee1;
+}
+
+.txtarea-desc {
+    width: -webkit-fill-available;
+    height: 100px;
+    border-radius: 20px;
+}
+
 .radio-btn-prior,
 .radio-btn-help {
     display: flex;
     flex-direction: column;
+    font-weight: 400;
 }
 
 .label-mrg {
@@ -42,9 +64,13 @@
 
 .btn-ticket {
     padding: 20px;
-    width: 100px;
+    width: 300px;
     border-radius: 10px;
     border-style: none;
+    background-color: #3C52E7;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: larger;
 }
 
 #screen-img {

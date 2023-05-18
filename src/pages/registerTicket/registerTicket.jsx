@@ -31,12 +31,12 @@ const RegisterTicket = () => {
 
   const handleSubmit = (e) => {
      e.preventDefault();
-    console.log('Fuck you very much')
+    console.log('Hi')
   };
 
     return (
     <div className='regTicket'>
-      <h1>Register a new ticket</h1>
+      <h1 className="h1-title">Register a new ticket</h1>
       <div className='main-reg'>
         <div className='reg-left'>
           <div className='div-space'>
@@ -44,7 +44,8 @@ const RegisterTicket = () => {
           <label className="label-mrg" htmlFor="username">Username</label>
         </div>
         <div>
-          <input
+                <input
+                  id="input-t"
           type="text"
                 className='input-name'
                 name='username'
@@ -58,7 +59,7 @@ const RegisterTicket = () => {
           <label  htmlFor="email">Email</label>
         </div>
         <div>
-          <input type="text" className='input-email'
+          <input type="text" id="input-t"
           name="email"
           value={formData.email}
           onChange={handleChange}    />
