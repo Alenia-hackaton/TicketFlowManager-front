@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    font-family: Nunito;
+}
+
+.ticket-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #030E6A;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .card-header {
+    padding: 20px;
+    border-bottom: 1px solid #F2F2F2;
+    margin-right: 10px;
+  }
+  
+  .input-title {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #F2F2F2;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .card-body {
+    padding: 20px;
+    margin-right: 10px;
+  }
+  
+  .input-description,
+  .input-activities {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F2F2F2;
+    border-radius: 3px;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .input-description {
+    height: 100px;
+  }
+  
+  .input-activities {
+    height: 40px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
