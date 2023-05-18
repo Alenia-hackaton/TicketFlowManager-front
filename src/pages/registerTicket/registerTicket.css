@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+
+.regTicket {
+    font-family: Nunito;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.div-space {
+    margin-top: 40px;
+}
+
+.main-reg {
+    display: flex;
+    margin-top: 70px;
+}
+
+.reg-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reg-right {
+    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.radio-btn-prior,
+.radio-btn-help {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-mrg {
+    margin-bottom: 30px;
+}
+
+.btn-ticket {
+    padding: 20px;
+    width: 100px;
+    border-radius: 10px;
+}

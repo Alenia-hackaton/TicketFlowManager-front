@@ -6,16 +6,16 @@ import "./Dashboard.css"
 export default function Dashboard () {
     // fetch tickets from database
     const [tickets, setTickets] = useState([]);
-    const fetchTickets = () => {
-      axios.get("http://localhost:4000/tickets/")
-      .then((response) => {
-          console.log(response.data);
-          setTickets(response.data)
-      })
-    }
-    useEffect(() => {
-      fetchTickets();
-    }, []);
+    // const fetchTickets = () => {
+    //   axios.get("http://localhost:4000/tickets/")
+    //   .then((response) => {
+    //       console.log(response.data);
+    //       setTickets(response.data)
+    //   })
+    // }
+    // useEffect(() => {
+    //   fetchTickets();
+    // }, []);
 
     // Update the status
     const updateTicketStatus = (ticketId, newStatus) => {
