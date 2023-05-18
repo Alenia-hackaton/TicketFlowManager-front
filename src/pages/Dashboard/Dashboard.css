@@ -90,3 +90,11 @@
     font-size: 16px;
   }
   
+  .see-ticket-link {
+    text-decoration: none;
+    color: #3C52E7;
+  }
+
+  .see-ticket-link:visited {
+    color: #5b25c8;
+  }
