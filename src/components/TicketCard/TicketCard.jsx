@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 
 export default function TicketCard ({ticket, ticketId, updateStatus}) {
   const handleChange = (event) => {
     const newStatus = event.target.value;
     updateStatus(ticketId, newStatus);
-  };
+  };  
       return (
         <div className="card-container">
         {ticket ? (
@@ -11,7 +13,6 @@ export default function TicketCard ({ticket, ticketId, updateStatus}) {
                 <h3 className="card-heading">Ticket #{ticket.id}</h3>
                 <p className="card-text">Priority: {ticket.ticket_priority}</p>
                 <p className="card-text">Subject: {ticket.ticket_subject}</p>     
-                {/* Must change this for link once routes are established */}
                 <form className="center">
                   <label htmlFor="change-status">
                     Change status{" "}
@@ -23,7 +24,7 @@ export default function TicketCard ({ticket, ticketId, updateStatus}) {
                       </select>
                   </label>
                 </form>
-                <p className="card-text">See ticket</p>
+                <p className="card-text"><Link to={`/tickets/${ticketId}`} className="see-ticket-link">See ticket</Link></p>
             </div>
         ) : null}
         </div>
