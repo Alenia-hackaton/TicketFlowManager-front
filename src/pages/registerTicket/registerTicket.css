@@ -37,11 +37,16 @@
 }
 
 .label-mrg {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .btn-ticket {
     padding: 20px;
     width: 100px;
     border-radius: 10px;
+    border-style: none;
+}
+
+#screen-img {
+    width: 200px;
 }

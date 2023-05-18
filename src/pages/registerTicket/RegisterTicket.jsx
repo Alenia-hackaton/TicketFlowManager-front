@@ -1,7 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './registerTicket.css'
 
-const registerTicket = () => {
+const RegisterTicket = () => {
+
+ const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    priority: '',
+    helpType: '',
+    description: '',
+ });
+  
+  const [imageFile, setImageFile] = useState();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleImageChange = (e) => {
+   
+    const file = e.target.files[0];
+    //  console.log(file)
+    setImageFile(file);
+};
+
+
+  const handleSubmit = (e) => {
+    console.log('Fuck Off')
+  };
+
   return (
     <div className='regTicket'>
       <h1>Register a new ticket</h1>
@@ -13,7 +44,12 @@ const registerTicket = () => {
           <label className="label-mrg" htmlFor="username">Username</label>
         </div>
         <div>
-          <input type="text" className='input-name' />
+          <input
+          type="text"
+                className='input-name'
+                name='username'
+          value={formData.username}
+          onChange={handleChange} />
         </div>
           </div>
           
@@ -22,7 +58,10 @@ const registerTicket = () => {
           <label  htmlFor="email">Email</label>
         </div>
         <div>
-          <input type="text" className='input-email' />
+          <input type="text" className='input-email'
+          name="email"
+          value={formData.email}
+          onChange={handleChange}    />
           </div>
           </div>
 
@@ -32,13 +71,16 @@ const registerTicket = () => {
           </div>
             <div className='radio-btn-prior'>
               <label htmlFor="high">
-                 <input type="radio" name="priority" value="heigh" />High
+                 <input type="radio" name="priority" value="heigh" checked={formData.priority === 'heigh'}
+                  onChange={handleChange} />High
               </label>
               <label htmlFor="medium">
-                <input type="radio" name="priority" value="medium" />Medium
+                <input type="radio" name="priority" value="medium" checked={formData.priority === 'medium'}
+                  onChange={handleChange}/>Medium
            </label>
               <label htmlFor="low">
-                <input type="radio" name="priority" value="low" />Low Importance
+                <input type="radio" name="priority" value="low" checked={formData.priority === 'low'}
+                  onChange={handleChange} />Low Importance
             </label>
             
           </div>
@@ -50,19 +92,28 @@ const registerTicket = () => {
           </div>
             <div className='radio-btn-help'>
               <label htmlFor="">
-                <input type="radio" name="help" value="general" />General Question
+                <input
+                  type="radio"
+                  name="help"
+                  value="general"
+                  checked={formData.help === "general"}
+                  onChange={handleChange}/>General Question
               </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="feature" />Feature Request
+                <input type="radio" name="help" value="feature" checked={formData.help === 'feature'}
+                  onChange={handleChange} />Feature Request
             </label>
               <label htmlFor="">
-                 <input type="radio" name="help" value="bug" />Bug Report
+                <input type="radio" name="help" value="bug" checked={formData.help === "bug"}
+                  onChange={handleChange} />Bug Report
             </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="account" />Account Issue
+                <input type="radio" name="help" value="account" checked={formData.help === "account"}
+                  onChange={handleChange}/>Account Issue
            </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="other" />Other
+                <input type="radio" name="help" value="other" checked={formData.help === "other"}
+                  onChange={handleChange}/>Other
             </label>
             
           </div>
@@ -75,7 +126,8 @@ const registerTicket = () => {
             <label htmlFor="desc">Describe your problem</label>
           </div>
           <div>
-            <textarea type="text" className='txtarea-desc' />
+            <textarea type="text" className='txtarea-desc' name="description" value={formData.description}
+                onChange={handleChange} />
             </div>
           </div>
           
@@ -84,11 +136,14 @@ const registerTicket = () => {
             <label htmlFor="desc">Upload the Screenshot</label>
           </div>
           <div id='screenshot'>
-            <input type="file" />
+            <input type="file" onChange={handleImageChange} />
+            </div>
+            <div>
+              {imageFile && <img id="screen-img" src={URL.createObjectURL(imageFile)} alt="Selected" />}
             </div>
           </div>
           <div className='btn-div'>
-            <button className='btn-ticket'>Submit</button>
+            <button className='btn-ticket' type='submit' onClick={handleSubmit}>Submit</button>
           </div>
         </div>
         </div>
@@ -96,4 +151,4 @@ const registerTicket = () => {
   )
 }
 
-export default registerTicket
+export default RegisterTicket
