@@ -15,9 +15,9 @@
   }
   
   .card {
-    width: 300px;
+    width: 350px;
     background-color: #030E6A;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
   }
@@ -30,11 +30,12 @@
   
   .input-title {
     width: 100%;
-    padding: 5px;
+    padding: 6px;
     border: none;
     border-bottom: 1px solid #F2F2F2;
     outline: none;
     font-size: 16px;
+    border-radius: 5px;
   }
   
   .card-body {
@@ -47,7 +48,7 @@
     width: 100%;
     padding: 5px;
     border: 1px solid #F2F2F2;
-    border-radius: 3px;
+    border-radius: 5px;
     outline: none;
     font-size: 14px;
     margin-bottom: 10px;
@@ -64,3 +65,10 @@
   h1 {
     text-align: center;
   }
+  .input-icon {
+    color: #F2F2F2;
+  }
+
+  
+
+  
