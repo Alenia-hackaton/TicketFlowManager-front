@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import './registerTicket.css'
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const RegisterTicket = () => {
 
+  const navigate = useNavigate();
+
  const [formData, setFormData] = useState({
-    // username: '',
-    // email: '',
     ticket_priority: '',
     ticket_subject: '',
     ticket_description: '',
@@ -34,7 +35,11 @@ const RegisterTicket = () => {
      e.preventDefault();
     axios
       .post("http://localhost:4000/tickets", formData)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        navigate('/tickets');
+      })
+
       .catch((error) => console.error(error))
   };
 
@@ -48,13 +53,7 @@ const RegisterTicket = () => {
           <label className="label-mrg" htmlFor="username">Username</label>
         </div>
         <div>
-                {/* <input
-                  id="input-t"
-          type="text"
-                className='input-name'
-                name='username'
-          value={formData.username}
-          onChange={handleChange} /> */}
+          
         </div>
           </div>
           
@@ -63,10 +62,6 @@ const RegisterTicket = () => {
           <label  htmlFor="email">Email</label>
         </div>
         <div>
-          {/* <input type="text" id="input-t"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}    /> */}
           </div>
           </div>
 
