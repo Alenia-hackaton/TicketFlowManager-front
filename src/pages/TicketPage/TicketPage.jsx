@@ -33,7 +33,7 @@ const TicketPage = () => {
             <p className="paragraph"><span className="bold">Subject:</span> {ticket.ticket_subject}</p>
             <p className="paragraph"><span className="bold">Creation date: </span>{ticket.creation_date.substring(0, 10)}</p>
             <p className="paragraph"><span className="bold">Ticket status:</span> {ticket.ticket_status}</p>
-            <p className="paragraph"><span className="bold">Requested by user id:</span>{ticket.user_id}</p>
+            <p className="paragraph"><span className="bold">Requested by user id:</span> {ticket.user_id}</p>
           </div> 
         </div>
         ) : <p>Ticket loading...</p>}       
