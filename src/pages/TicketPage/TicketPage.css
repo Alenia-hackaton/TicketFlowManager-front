@@ -6,12 +6,16 @@
     font-family: Nunito;
 }
 
+.ticket-page {
+  margin: 15px;
+}
+
 .ticket-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 90vh;
+    margin: 30px;
   }
   
   .card {
@@ -74,11 +78,18 @@
   }
 
   .paragraph {
-    line-height: 2;
+    margin-top: 13px;
   }
 
   .bold {
     font-weight: bolder;
     font-size: 1.1em;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: #090f34;
+    padding: 35px;
+    font-size: 20px;
   }
   
