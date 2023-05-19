@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./TicketPage.css";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const TicketPage = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [ ticket, setTicket] = useState({});
 
   const fetchTickets = () => {
@@ -20,8 +20,10 @@ const TicketPage = () => {
   }, []);
 
   return (
-    <div className="ticket-page-container">
+    <div className="ticket-page">
+    <p><Link to="/tickets"className="back-link">Back</Link></p>
     <h1>Ticket Page</h1>
+    <div className="ticket-page-container">
       {ticket.id ? (
         <div className="card">
           <h3 className="card-heading card-header">Ticket #{ticket.id}</h3>
@@ -35,6 +37,7 @@ const TicketPage = () => {
           </div> 
         </div>
         ) : <p>Ticket loading...</p>}       
+    </div>
     </div>
   );
 };
