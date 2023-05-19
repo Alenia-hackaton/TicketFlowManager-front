@@ -53,7 +53,7 @@ const RegisterTicket = () => {
           <label className="label-mrg" htmlFor="username">Username</label>
         </div>
         <div>
-          
+          <h3 className="h3-text">John Doe</h3>
         </div>
           </div>
           
@@ -61,7 +61,8 @@ const RegisterTicket = () => {
         <div className="label-mrg">
           <label  htmlFor="email">Email</label>
         </div>
-        <div>
+              <div>
+                <h3 className="h3-text">JohnDoe@email.com</h3>
           </div>
           </div>
 
