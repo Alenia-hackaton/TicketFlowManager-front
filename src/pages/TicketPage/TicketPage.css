@@ -11,22 +11,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
   }
   
   .card {
     width: 350px;
-    background-color: #030E6A;
+    background: linear-gradient(to bottom, #030E6A, #3C52E7);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    color: white;
+    color:#F2F2F2
   }
   
   .card-header {
     padding: 20px;
     border-bottom: 1px solid #F2F2F2;
     margin-right: 10px;
+    height: 30px;
   }
   
   .input-title {
@@ -42,6 +43,8 @@
   .card-body {
     padding: 20px;
     margin-right: 10px;
+    height: 250px;
+
   }
   
   .input-description,
@@ -70,6 +73,12 @@
     color: #F2F2F2;
   }
 
-  
+  .paragraph {
+    line-height: 2;
+  }
 
+  .bold {
+    font-weight: bolder;
+    font-size: 1.1em;
+  }
   
