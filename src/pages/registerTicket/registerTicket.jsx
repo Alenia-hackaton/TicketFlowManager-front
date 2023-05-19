@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 import './registerTicket.css'
+import axios from "axios";
 
 const RegisterTicket = () => {
 
  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    priority: '',
-    helpType: '',
-    description: '',
+    // username: '',
+    // email: '',
+    ticket_priority: '',
+    ticket_subject: '',
+    ticket_description: '',
  });
   
   const [imageFile, setImageFile] = useState();
@@ -31,7 +32,10 @@ const RegisterTicket = () => {
 
   const handleSubmit = (e) => {
      e.preventDefault();
-    console.log('Hi')
+    axios
+      .post("http://localhost:4000/tickets", formData)
+      .then((response) => console.log(response))
+      .catch((error) => console.error(error))
   };
 
     return (
@@ -44,13 +48,13 @@ const RegisterTicket = () => {
           <label className="label-mrg" htmlFor="username">Username</label>
         </div>
         <div>
-                <input
+                {/* <input
                   id="input-t"
           type="text"
                 className='input-name'
                 name='username'
           value={formData.username}
-          onChange={handleChange} />
+          onChange={handleChange} /> */}
         </div>
           </div>
           
@@ -59,10 +63,10 @@ const RegisterTicket = () => {
           <label  htmlFor="email">Email</label>
         </div>
         <div>
-          <input type="text" id="input-t"
+          {/* <input type="text" id="input-t"
           name="email"
           value={formData.email}
-          onChange={handleChange}    />
+          onChange={handleChange}    /> */}
           </div>
           </div>
 
@@ -72,15 +76,15 @@ const RegisterTicket = () => {
           </div>
             <div className='radio-btn-prior'>
               <label htmlFor="high">
-                 <input type="radio" name="priority" value="heigh" checked={formData.priority === 'heigh'}
+                 <input type="radio" name="ticket_priority" value="High" checked={formData.ticket_priority === 'High'}
                   onChange={handleChange} />High
               </label>
               <label htmlFor="medium">
-                <input type="radio" name="priority" value="medium" checked={formData.priority === 'medium'}
+                <input type="radio" name="ticket_priority" value="Medium" checked={formData.ticket_priority === 'Medium'}
                   onChange={handleChange}/>Medium
            </label>
               <label htmlFor="low">
-                <input type="radio" name="priority" value="low" checked={formData.priority === 'low'}
+                <input type="radio" name="ticket_priority" value="Low" checked={formData.ticket_priority === 'Low'}
                   onChange={handleChange} />Low Importance
             </label>
             
@@ -95,25 +99,25 @@ const RegisterTicket = () => {
               <label htmlFor="">
                 <input
                   type="radio"
-                  name="help"
+                  name="ticket_subject"
                   value="general"
-                  checked={formData.help === "general"}
+                  checked={formData.ticket_subject === "general"}
                   onChange={handleChange}/>General Question
               </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="feature" checked={formData.help === 'feature'}
+                <input type="radio" name="ticket_subject" value="feature" checked={formData.ticket_subject === 'feature'}
                   onChange={handleChange} />Feature Request
             </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="bug" checked={formData.help === "bug"}
+                <input type="radio" name="ticket_subject" value="bug" checked={formData.ticket_subject === "bug"}
                   onChange={handleChange} />Bug Report
             </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="account" checked={formData.help === "account"}
+                <input type="radio" name="ticket_subject" value="account" checked={formData.ticket_subject === "account"}
                   onChange={handleChange}/>Account Issue
            </label>
               <label htmlFor="">
-                <input type="radio" name="help" value="other" checked={formData.help === "other"}
+                <input type="radio" name="ticket_subject" value="other" checked={formData.ticket_subject === "other"}
                   onChange={handleChange}/>Other
             </label>
             
@@ -127,7 +131,7 @@ const RegisterTicket = () => {
             <label htmlFor="desc">Describe your problem</label>
           </div>
           <div>
-            <textarea type="text" className='txtarea-desc' name="description" value={formData.description}
+            <textarea type="text" className='txtarea-desc' name="ticket_description" value={formData.ticket_description}
                 onChange={handleChange} />
             </div>
           </div>
